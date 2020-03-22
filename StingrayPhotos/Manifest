@@ -1,0 +1,7 @@
+{
+   	"id": "StingrayPhotos", 
+	"display": {"name": "Photosa"}, 
+	"application": {}, 
+	"version": 1, 
+	"depends": ["controls"]
+}
