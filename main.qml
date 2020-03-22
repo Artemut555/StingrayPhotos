@@ -9,7 +9,7 @@ Application {
 	PageStack {
 		id: pageStack;
 		property string url;
-
+		property int code;
 		StartPage {
 			id: startpage;
 			onCodeEvent: {

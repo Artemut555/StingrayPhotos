@@ -32,6 +32,19 @@ Item {
 		}
 		//another button to get code
 		onSelectPressed: {
+			pageStack.code = 2;
+			var request = new XMLHttpRequest();
+			request.open("GET", "http://127.0.0.1:8000/get_key/", true);
+			request.onreadystatechange = function() {
+				 if (request.readyState !== XMLHttpRequest.DONE)
+					return;
+				 if (request.status === 200) {
+					log("response was received");
+					pageStack.code = JSON.parse(request.responseText)["key"];
+				 } else
+					log("unhandled status", request.status);
+			}
+			request.send();
 			log("StartButton PRESSED!");
 			parent.CodeEvent();
 		}

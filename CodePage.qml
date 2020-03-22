@@ -14,23 +14,6 @@ Item{
     
     signal PhotosEvent();
 
-    function getKey() {
-        var request = new XMLHttpRequest();
-        request.open("GET", "http://127.0.0.1:8000/get_key/", true);
-        var key;
-        request.onreadystatechange = function() {
-            if (request.readyState !== XMLHttpRequest.DONE)
-                return;
-            if (request.status === 200) {
-                log("response was received");
-                key = JSON.parse(request.responseText)["key"];
-            } else
-                log("unhandled status", request.status);
-        }
-        request.send();
-        return key;
-    }
-
     FocusablePanel {
 
         id: codeButton;
@@ -41,17 +24,27 @@ Item{
         color: active ? "#ddddff" : colorTheme.focusablePanelColor;
         radius: 90;
         Image {
-                id: txt;
+            id: txt;
             source: "apps/StingrayPhotos/img/play.png";
             width: 180;
             height: 180;
             anchors.horizontalCenter: safeArea.horizontalCenter;
             anchors.verticalCenter: safeArea.verticalCenter;
         }
+	
         //сгенеренный код и кнопка продолжить
         onSelectPressed: {
             log("CodeButton PRESSED!");
             parent.PhotosEvent();
         }
+	Edit{
+		height:100;
+		width:800;
+		//anchors.leftMargin: 400;
+		showBackground: false;
+		anchors.horizontalCenter: safeArea.horizontalCenter;
+    	} 
     }
+	
+	
 }
