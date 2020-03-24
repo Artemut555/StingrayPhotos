@@ -7,7 +7,16 @@ Rectangle {
     anchors.fill: mainWindow;
     color: "#FFFFFF";
  
-    signal CodeEvent();  
+    signal CodeEvent(); 
+
+SubheadText {
+	y: 20;
+
+        color: "#000000";
+       	//anchors.horizontalCenter: parent.horizontalCenter;
+	x: 20;
+        text: " Чтобы показать фотографии на этом телевизоре, \n нужно зайти на сайт http://84.201.129.186:8000/ с компьютера \n и ввести код, который ты вот-вот увидишь. \n Его нужно ввести на сайте, \n и там можно будет загрузить фотографии, \n которые хочешь показать. Если все понял,\n нажимай ОК.";
+    } 
 
     FocusablePanel {
         id: menuButton;
@@ -17,6 +26,9 @@ Rectangle {
         height: 180;
         color: active ? "#ddddff" : colorTheme.focusablePanelColor;
         radius: 90;
+
+    
+
 
         Image {
 	    id: txt;

@@ -13,7 +13,7 @@ Rectangle {
 	y: 70;
         color: "#000000";
         anchors.horizontalCenter: parent.horizontalCenter;
-        text: "Введите код на сайте 167.172.51.41/photos";
+        text: "Введите код на сайте http://84.201.129.186:8000/";
     }
 
     TitleText {
