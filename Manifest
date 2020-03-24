@@ -1,6 +1,6 @@
 {
    	"id": "StingrayPhotos", 
-	"display": {"name": "Photosa"}, 
+	"display": {"name": "Фотографии"}, 
 	"application": {}, 
 	"version": 1, 
 	"depends": ["controls"]

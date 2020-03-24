@@ -1,11 +1,12 @@
 import controls.Button;
 import controls.FocusablePanel;
 
-Item {
+Rectangle {
     id: photo;
     focus: true;
     anchors.horizontalCenter: safeArea.horizontalCenter;
-
+    anchors.fill: mainWindow;
+    color: "#FFFFFF";
     Image {
         id: background;
         anchors.horizontalCenter: safeArea.horizontalCenter;

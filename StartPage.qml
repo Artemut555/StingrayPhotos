@@ -9,37 +9,34 @@ Rectangle {
  
     signal CodeEvent(); 
 
-SubheadText {
-	y: 20;
-
+    SubheadText {
+        y: 70;
         color: "#000000";
-       	//anchors.horizontalCenter: parent.horizontalCenter;
-	x: 20;
-        text: " Чтобы показать фотографии на этом телевизоре, \n нужно зайти на сайт http://84.201.129.186:8000/ с компьютера \n и ввести код, который ты вот-вот увидишь. \n Его нужно ввести на сайте, \n и там можно будет загрузить фотографии, \n которые хочешь показать. Если все понял,\n нажимай ОК.";
+        anchors.horizontalCenter: parent.horizontalCenter;
+        x: 20;
+        text: " Для просмотра фотографий на телевизоре, нужнo \n зайти на специальный сайт с вашего компьютера \n и ввести код. Далее нужно загрузить фотографии. \n \n                 Чтобы получить код, нажмите ОК.";
     } 
 
     FocusablePanel {
         id: menuButton;
-        anchors.horizontalCenter: safeArea.horizontalCenter;
-        anchors.verticalCenter: safeArea.verticalCenter;
-        width: 180;
-        height: 180;
-        color: active ? "#ddddff" : colorTheme.focusablePanelColor;
-        radius: 90;
+	anchors.horizontalCenter: safeArea.horizontalCenter;
+	y: 300;
+	width: 180;
+	height: 180;
+	color: active ? "#ddddff" : colorTheme.focusablePanelColor;
+	radius: 90;
 
-    
-
-
-        Image {
+	Image {
 	    id: txt;
 	    source: "apps/StingrayPhotos/img/play.png";
 	    width: 180;
 	    height: 180;
-	    anchors.horizontalCenter: safeArea.horizontalCenter;
-	    anchors.verticalCenter: safeArea.verticalCenter;
-        }
+	    anchors.horizontalCenter: parent.horizontalCenter;
+	    anchors.verticalCenter: parent.verticalCenter;
+	}
 
         onSelectPressed: {
+            pageStack.url = "apps/StingrayPhotos/img/Error.png";
             pageStack.code = 0;
             var request = new XMLHttpRequest();
 
@@ -55,7 +52,6 @@ SubheadText {
                         log("unhandled status", request.status);
             }
             request.send();
-                
             log("StartButton PRESSED!");
             parent.CodeEvent();
         }

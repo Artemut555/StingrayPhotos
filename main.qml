@@ -25,8 +25,11 @@ Application {
                 pageStack.currentIndex = 0;
             }
             onPhotosEvent: {
-                pageStack.url = "http://84.201.129.186:8000/get_image/?key=" + pageStack.code + "&num=" + pageStack.cnt;
+                if(pageStack.code !== 0){
+                    pageStack.url = "http://84.201.129.186:8000/get_image/?key=" + pageStack.code + "&num=" + pageStack.cnt;
+                }
                 log("onPhotosEvent");
+		log(pageStack.url);
                 pageStack.currentIndex = 2;
             }
         }
@@ -41,7 +44,9 @@ Application {
                 log("NextPhotoGoes");
 		pageStack.cnt = pageStack.cnt + 1;
                 //new link is necessery to refresh image in PhotosPage
-                pageStack.url = "http://84.201.129.186:8000/get_image/?key=" + pageStack.code + "&num=" + pageStack.cnt;
+                if(pageStack.code !== 0){
+                    pageStack.url = "http://84.201.129.186:8000/get_image/?key=" + pageStack.code + "&num=" + pageStack.cnt;
+                }
 		log(pageStack.url);
                 pageStack.currentIndex = 2;
             }
