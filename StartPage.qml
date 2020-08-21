@@ -37,21 +37,24 @@ Rectangle {
 
         onSelectPressed: {
             pageStack.url = "apps/StingrayPhotos/img/Error.png";
-            pageStack.code = 0;
-            var request = new XMLHttpRequest();
+            if (pageStack.codeRecieved != 1) {
+	        pageStack.code = 0;
+	        var request = new XMLHttpRequest();
 
-            //getting code for website
-            request.open("GET", "http://84.201.129.186:8000/get_key/", true);
-            request.onreadystatechange = function() {
-                if (request.readyState !== XMLHttpRequest.DONE)
-                    return;
-                    if (request.status === 200) {
-                        log("response was received");
-                        pageStack.code = JSON.parse(request.responseText)["key"];
-                    } else
-                        log("unhandled status", request.status);
+	        //getting code for website
+	        request.open("GET", "http://84.201.129.186:8000/get_key/", true);
+	        request.onreadystatechange = function() {
+	    	    if (request.readyState !== XMLHttpRequest.DONE)
+		        return;
+		        if (request.status === 200) {
+			    log("response was received");
+			    pageStack.code = JSON.parse(request.responseText)["key"];
+		        } else
+			    log("unhandled status", request.status);
+	        }
+		request.send();
             }
-            request.send();
+            
             log("StartButton PRESSED!");
             parent.CodeEvent();
         }

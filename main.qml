@@ -11,6 +11,8 @@ Application {
         property string url;
         property int code;
 	property int cnt;
+        property int codeRecieved;
+
         StartPage {
             id: startpage;
             onCodeEvent: {
@@ -30,6 +32,7 @@ Application {
                 }
                 log("onPhotosEvent");
 		log(pageStack.url);
+ 		pageStack.codeRecieved = 1;
                 pageStack.currentIndex = 2;
             }
         }
@@ -38,7 +41,7 @@ Application {
             id: photospage;
             onBackPressed: {
                 log("returned");
-                pageStack.currentIndex = 0;
+                pageStack.currentIndex = 1;
             }
             onSelectPressed: {
                 log("NextPhotoGoes");
