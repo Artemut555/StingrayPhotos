@@ -8,31 +8,50 @@ Rectangle {
     color: "#FFFFFF";
  
     signal CodeEvent(); 
-
-    SubheadText {
-        y: 70;
+    
+    Text {
+	y: 220;
+        x: 70;
         color: "#000000";
-        anchors.horizontalCenter: parent.horizontalCenter;
-        x: 20;
-        text: " Для просмотра фотографий на телевизоре, нужнo \n зайти на специальный сайт с вашего компьютера \n и ввести код. Далее нужно загрузить фотографии. \n \n                 Чтобы получить код, нажмите ОК.";
-    } 
+        font: Font {
+            family: "Proxima Nova";
+            bold: false;
+            pixelSize: 100;
+	}
+        text: "Stingray Photos";
+    }
+
+    Text {
+        x: 65;
+        anchors.verticalCenter: parent.verticalCenter;
+        color: "#000000";
+        font: Font {
+            family: "Proxima Nova";
+            bold: true;
+            pixelSize: 40;
+	}
+        text: " Чтобы загрузить фотографии, нужно зайти на специальный сайт с \n телефона или компьютера, ввести код, который вы сейчас \n получите, и загрузить фотографии. ";
+    }
 
     FocusablePanel {
         id: menuButton;
-	anchors.horizontalCenter: safeArea.horizontalCenter;
-	y: 300;
-	width: 180;
-	height: 180;
-	color: active ? "#ddddff" : colorTheme.focusablePanelColor;
-	radius: 90;
+	y: 430;
+        x: 70;
+	width: 220;
+	height: 45;
+	color: "#000000";
 
-	Image {
-	    id: txt;
-	    source: "apps/StingrayPhotos/img/play.png";
-	    width: 180;
-	    height: 180;
-	    anchors.horizontalCenter: parent.horizontalCenter;
+	Text {
+            id: subText;
 	    anchors.verticalCenter: parent.verticalCenter;
+            anchors.horizontalCenter: parent.horizontalCenter;
+            color: "#FFFFFF";
+            text: "Получить код";
+            font: Font {
+                family: "Proxima Nova";
+                bold: false;
+                pixelSize: 40;
+            }
 	}
 
         onSelectPressed: {

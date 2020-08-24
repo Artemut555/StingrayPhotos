@@ -3,42 +3,77 @@ import controls.Edit;
 Rectangle {
     height: 650;
     width: 1250;
-    focus: true;
     anchors.fill: mainWindow;
     color: "#FFFFFF";
     
     signal PhotosEvent();
-
-    SubheadText {
+    
+    Text {
 	y: 70;
         color: "#000000";
+        font: Font {
+            family: "Proxima Nova";
+            bold: true;
+            pixelSize: 30;
+	}
         anchors.horizontalCenter: parent.horizontalCenter;
-        text: "Введите код на сайте http://84.201.129.186:8000/";
+        text: "Зайдите на сайт";
     }
 
-    TitleText {
-	y: 180;
+    Text {
+	y: 100;
         color: "#000000";
+        font: Font {
+            family: "Courier New";
+            bold: false;
+            pixelSize: 60;
+	}
+        anchors.horizontalCenter: parent.horizontalCenter;
+        text: "http://84.201.129.186:8000/";
+    }
+
+    Text {
+	y: 220;
+        color: "#000000";
+        font: Font {
+            family: "Proxima Nova";
+            bold: true;
+            pixelSize: 40;
+	}
+        anchors.horizontalCenter: parent.horizontalCenter;
+        text: "Введите код";
+    }
+
+    Text {
+	y: 240;
+        color: "#000000";
+        font: Font {
+            family: "Courier New";
+            bold: false;
+            pixelSize: 300;
+	}
         anchors.horizontalCenter: parent.horizontalCenter;
         text: pageStack.code;
     }
 
     FocusablePanel {
         id: menuButton;
-	anchors.horizontalCenter: safeArea.horizontalCenter;
-	y: 300;
-	width: 180;
-	height: 180;
-	color: active ? "#ddddff" : colorTheme.focusablePanelColor;
-	radius: 90;
+	y: 500;
+	width: 220;
+	height: 45;
+	color: active ? colorTheme.focusablePanelColo : "#000000";
+        anchors.horizontalCenter: parent.horizontalCenter;
 
-	Image {
-	    id: txt;
-	    source: "apps/StingrayPhotos/img/play.png";
-	    width: 180;
-	    height: 180;
-	    anchors.horizontalCenter: parent.horizontalCenter;
+	Text {
 	    anchors.verticalCenter: parent.verticalCenter;
+            anchors.horizontalCenter: parent.horizontalCenter;
+            color: "#FFFFFF";
+            text: "Начать показ";
+            font: Font {
+                family: "Proxima Nova";
+                bold: false;
+                pixelSize: 40;
+            }
 	}
 
         onSelectPressed: {
