@@ -48,7 +48,7 @@ Rectangle {
 	y: 240;
         color: "#000000";
         font: Font {
-            family: "Courier New";
+            family: "Proxima Nova";
             bold: false;
             pixelSize: 300;
 	}
