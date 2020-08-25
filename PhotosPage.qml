@@ -14,3 +14,4 @@ Rectangle {
         source: pageStack.url;
     }
 }
+

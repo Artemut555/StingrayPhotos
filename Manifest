@@ -1,6 +1,6 @@
 {
    	"id": "StingrayPhotos", 
-	"display": {"name": "Фотографии", "icon": "icon.png"}, 
+	"display": {"name": "Фотографии", "icon": "img/icon.png"}, 
 	"application": {}, 
 	"version": 1, 
 	"depends": ["controls"]

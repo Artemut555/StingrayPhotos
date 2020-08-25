@@ -29,7 +29,7 @@ Rectangle {
             pixelSize: 60;
 	}
         anchors.horizontalCenter: parent.horizontalCenter;
-        text: "http://84.201.129.186:8000/";
+        text: "https://tinyurl.com/stingrayPhotos";
     }
 
     Text {
